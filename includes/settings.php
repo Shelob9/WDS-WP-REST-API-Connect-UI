@@ -198,6 +198,13 @@ class WDSRESTCUI_Settings {
 		) );
 
 		$cmb->add_field( array(
+			'name'       => __( 'Generate Keys', 'wds-rest-connect-ui' ),
+			'before_row' => sprintf( '<p><a title="%s" href="%s">', __( 'Click To generate new keys', 'wds_rest_connect_ui' ), esc_url( add_query_arg( array( 'page' => 'wds_rest_connect_ui_settings', 'keys' => 'generate', 'nonce' => wp_create_nonce( 'wds_rest_connect_ui' ) ),  admin_url()  ) ) ) . __( 'Click here to generate keys.', 'wds-rest-connect-ui' ) . '</a></p>',
+			'id'         => 'consumer_key',
+			'type'       => 'text',
+		) );
+
+		$cmb->add_field( array(
 			'name' => __( 'Consumer Secret', 'wds-rest-connect-ui' ),
 			'id'   => 'consumer_secret',
 			'type' => 'text',
